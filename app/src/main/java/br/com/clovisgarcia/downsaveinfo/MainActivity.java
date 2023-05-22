@@ -38,7 +38,12 @@ public class MainActivity extends AppCompatActivity {
         downloadButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                AnalisadorXML analisadorXML = new AnalisadorXML(mensagem);
+                analisadorXML.process();
+                mensagem = analisadorXML.getConteudo();
+
                 mensagemInserida.setText(mensagem);
+
             }
         });
 
